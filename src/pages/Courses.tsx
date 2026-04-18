@@ -134,7 +134,7 @@ const Courses = () => {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gold/10 rounded-bl-full -mr-12 -mt-12" />
 
                 <p className="text-sm font-bold uppercase tracking-widest text-gold mb-2">Complete Course Fees</p>
-                <h3 className="text-5xl font-bold text-burgundy mb-6">{ACADEMY_DETAILS.fees}</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-burgundy mb-6 leading-tight">{ACADEMY_DETAILS.fees}</h3>
                 <div className="inline-block px-4 py-1 rounded-full bg-burgundy/5 text-burgundy text-xs font-bold uppercase tracking-widest border border-burgundy/10 mb-8">
                   🔥 Limited Seats Available
                 </div>
@@ -149,7 +149,7 @@ const Courses = () => {
                   to="/contact?service=Makeup Course (Academy)"
                   className="w-full flex items-center justify-center gap-2 py-4 gradient-gold text-foreground font-bold tracking-widest uppercase text-xs rounded-xl hover:shadow-xl transition-all"
                 >
-                  Enroll Now on WhatsApp <MessageCircle size={18} />
+                  Enquire Now on WhatsApp <MessageCircle size={18} />
                 </Link>
               </motion.div>
 
