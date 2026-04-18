@@ -48,7 +48,7 @@ export const ACADEMY_DETAILS = {
   startDate: "15 May 2026",
   timing: "11 AM – 4 PM",
   location: "Sangli",
-  fees: "₹30,000",
+  fees: "Enquire for Fee Details",
   curriculum: [
     "Basic to Advanced Makeup",
     "Bridal Hairstyling",
