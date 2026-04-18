@@ -15,6 +15,8 @@ import southIndian1 from "@/assets/Owner.webp";
 import heroBride2 from "@/assets/15.jpg";
 import engagement1 from "@/assets/bride-engagement-1.jpg";
 import party1 from "@/assets/bride-party-1.jpg";
+import hdMakeup from "@/assets/8.webp";
+import luxuryMakeup from "@/assets/12.webp";
 
 const Index = () => {
   const [galleryImages, setGalleryImages] = useState<any[]>([]);
@@ -61,149 +63,222 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-cream/50 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
+        <div className="absolute inset-0 z-0">
+          <motion.img
             src={heroBride}
             alt="Premium Bridal Makeup"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover animate-slow-zoom"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-cream to-transparent" />
+          {/* Advanced Luxury Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="max-w-3xl animate-float"
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-gold/20 text-gold-light text-xs font-bold uppercase tracking-widest border border-gold/30 mb-6 backdrop-blur-sm">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+              className="inline-block px-6 py-2 rounded-full bg-white/10 text-gold-light text-[10px] font-bold uppercase tracking-[0.3em] border border-white/20 mb-8 backdrop-blur-xl shadow-2xl"
+            >
+              <Sparkles size={12} className="inline-block mr-2 animate-pulse" />
               Premium Artistry by Soniya Patange
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-8">
-              Elegance <span className="text-gold-light italic">Redefined.</span>
+            </motion.div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 tracking-tighter">
+              Elegance <span className="text-gold-light italic font-subheading drop-shadow-2xl">Redefined.</span>
             </h1>
-            <p className="font-subheading text-xl md:text-2xl text-white/80 mb-10 leading-relaxed">
-              Crafting timeless bridal transformations with a luxury touch for your most precious moments.
+            
+            <p className="font-subheading text-lg md:text-2xl text-white/90 mb-10 leading-relaxed max-w-xl text-shadow-elegant font-light">
+              Crafting <span className="text-gold-light font-bold">timeless</span> bridal transformations with a luxury touch for your most precious moments.
             </p>
-            <div className="flex flex-col sm:flex-row gap-5">
+            
+            <div className="flex flex-col sm:flex-row gap-6 items-center">
               <Link
                 to="/contact?service=Bridal Makeup"
-                className="px-10 py-4 gradient-gold text-foreground font-bold tracking-widest uppercase text-xs rounded-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2"
+                className="group relative px-12 py-5 overflow-hidden rounded-2xl bg-gold text-foreground font-bold tracking-[0.2em] uppercase text-xs transition-all hover:scale-105 active:scale-95 animate-shimmer"
               >
-                Check Availability <MessageCircle size={16} />
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Check Availability <MessageCircle size={18} className="group-hover:rotate-12 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
+              
               <Link
                 to="/bridal-pricing"
-                className="px-10 py-4 bg-white/10 text-white font-bold tracking-widest uppercase text-xs rounded-xl border border-white/20 hover:bg-white/20 transition-all backdrop-blur-md flex items-center justify-center"
+                className="group px-12 py-5 rounded-2xl bg-white/5 text-white font-bold tracking-[0.2em] uppercase text-xs border border-white/30 hover:bg-white/10 hover:border-white transition-all backdrop-blur-md flex items-center justify-center gap-2"
               >
                 View Pricing
               </Link>
             </div>
           </motion.div>
         </div>
+        
+        {/* Glass Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50 animate-bounce">
+          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+        </div>
       </section>
 
-      {/* Urgency Ribbon */}
-      <div className="bg-burgundy py-3 overflow-hidden whitespace-nowrap relative z-20">
-        <div className="flex animate-marquee gap-8">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="text-white text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-4">
-              <Sparkles size={12} className="text-gold-light" /> Limited Dates Available for 2026 Batch
-            </span>
-          ))}
-        </div>
-      </div>
 
-      {/* Pricing Preview Section - NEW */}
-      <section className="py-20 md:py-32 bg-cream">
+      {/* Gallery Highlight */}
+      <section className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="max-w-2xl">
-              <p className="font-subheading text-lg text-gold tracking-widest uppercase mb-4">Investment</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-burgundy italic">Curated Bridal Packages</h2>
-            </div>
-            <Link to="/bridal-pricing" className="text-primary font-bold uppercase tracking-widest text-sm flex items-center gap-2 hover:text-gold transition-colors">
-              Full Pricing Guide <ArrowRight size={18} />
+          <SectionHeading title="Recent Bridal Work" subtitle="A curation of our latest bridal transformations and traditional designs." />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {loadingGallery ? (
+              Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="aspect-[3/4] rounded-2xl" />)
+            ) : (
+              galleryImages.map((img, i) => (
+                <motion.div
+                  key={img.id || i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="rounded-2xl overflow-hidden aspect-[3/4] relative group shadow-lg"
+                >
+                  <img src={img.src} alt={img.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-burgundy/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                    <p className="text-white font-bold">{img.label}</p>
+                  </div>
+                </motion.div>
+              ))
+            )}
+          </div>
+          <div className="text-center mt-12">
+            <Link to="/portfolio" className="px-8 py-3 rounded-full border border-gold text-gold font-bold uppercase tracking-widest text-[10px] hover:bg-gold hover:text-white transition-all">
+              Explore Full Portfolio
             </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+      {/* Trust Highlights Bar */}
+      <section className="bg-burgundy py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 opacity-30" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 md:p-12 rounded-3xl shadow-xl flex flex-col group border border-gold/5"
+              className="flex flex-col items-center text-center space-y-4"
             >
-              <h3 className="text-3xl font-bold mb-2 text-burgundy">{BRIDAL_PRICING.hd.title}</h3>
-              <p className="text-muted-foreground mb-8">Flawless, camera-ready natural finish.</p>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-xs font-bold text-muted-foreground uppercase opacity-60">Starting from</span>
-                <span className="text-4xl font-bold text-primary">₹15,000</span>
-              </div>
-              <ul className="space-y-4 mb-10 flex-1">
-                {BRIDAL_PRICING.hd.services.slice(0, 3).map((s, i) => (
-                  <li key={i} className="flex justify-between items-center text-sm font-semibold border-b border-nude/30 pb-3">
-                    <span className="text-foreground/80">{s.name}</span>
-                    <span className="text-primary">{s.price}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact?service=Bridal Makeup"
-                className="w-full py-4 rounded-xl border-2 border-primary text-primary font-bold tracking-widest uppercase text-xs text-center hover:bg-primary hover:text-white transition-all block"
-              >
-                Enquire Now
-              </Link>
+              <Award className="text-gold-light w-10 h-10 stroke-[1.2]" />
+              <p className="font-subheading text-white text-xl md:text-2xl italic tracking-wide">
+                Trusted by 100+ Brides
+              </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-burgundy p-8 md:p-12 rounded-3xl shadow-2xl flex flex-col relative overflow-hidden ring-4 ring-gold/20"
+              transition={{ delay: 0.2 }}
+              className="flex flex-col items-center text-center space-y-4"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-10">
-                <Star size={80} className="text-gold-light" />
-              </div>
-              <h3 className="text-3xl font-bold mb-2 text-gold-light">{BRIDAL_PRICING.luxury.title}</h3>
-              <p className="text-white/60 mb-8">Waterproof, 18-hour stay luxury finish.</p>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-xs font-bold text-white/40 uppercase">Starting from</span>
-                <span className="text-4xl font-bold text-gold-light">₹20,000</span>
-              </div>
-              <ul className="space-y-4 mb-10 flex-1">
-                {BRIDAL_PRICING.luxury.services.slice(0, 3).map((s, i) => (
-                  <li key={i} className="flex justify-between items-center text-sm font-semibold border-b border-white/10 pb-3">
-                    <span className="text-white/80">{s.name}</span>
-                    <span className="text-gold-light">{s.price}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact?service=Luxury Airbrush Makeup"
-                className="w-full py-4 rounded-xl gradient-gold text-foreground font-bold tracking-widest uppercase text-xs text-center hover:shadow-xl transition-all block"
-              >
-                Book Luxury Now
-              </Link>
+              <Star className="text-gold-light w-10 h-10 stroke-[1.2]" />
+              <p className="font-subheading text-white text-xl md:text-2xl italic tracking-wide max-w-[250px]">
+                Professional Bridal Makeup Artist
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col items-center text-center space-y-4"
+            >
+              <Heart className="text-gold-light w-10 h-10 stroke-[1.2]" />
+              <p className="font-subheading text-white text-xl md:text-2xl italic tracking-wide max-w-[250px]">
+                Specialist in Traditional Bridal Looks
+              </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Premium Products Highlight - NEW */}
-      <section className="py-20 bg-white border-y border-gold/10">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="font-subheading text-lg text-gold tracking-widest uppercase mb-8">The Professional Kit</p>
-          <h2 className="text-3xl font-bold mb-12 text-burgundy italic">Only the Finest for Your Skin</h2>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 opacity-60">
-            {["DIOR", "CHARLOTTE TILBURY", "NARS", "MAC", "HUDA BEAUTY", "ANASTASIA", "TOO FACED"].map((brand) => (
-              <span key={brand} className="text-xl md:text-2xl font-heading font-extrabold tracking-tighter text-burgundy grayscale hover:grayscale-0 transition-all cursor-default">{brand}</span>
-            ))}
+      {/* Services Preview Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col items-center text-center mb-16 px-4">
+            <p className="font-subheading text-lg text-gold tracking-widest uppercase mb-4">Our Expertise</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-burgundy italic">Exquisite Artistry Services</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
+            {/* HD Makeup Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gold/10 hover:shadow-2xl transition-all duration-500"
+            >
+              <div className="aspect-[4/5] relative overflow-hidden">
+                <img 
+                  src={hdMakeup} 
+                  alt="HD Bridal Makeup" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div className="p-10">
+                <h3 className="text-3xl font-bold text-burgundy mb-4">{BRIDAL_PRICING.hd.title}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed mb-8 h-18 line-clamp-2">
+                  {BRIDAL_PRICING.hd.description} Perfect for classic, elegant looks.
+                </p>
+                <Link 
+                  to="/services" 
+                  className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[11px] group/link"
+                >
+                  Learn More <ChevronRight size={14} className="transition-transform group-hover/link:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Luxury Makeup Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="group bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gold/10 hover:shadow-2xl transition-all duration-500"
+            >
+              <div className="aspect-[4/5] relative overflow-hidden">
+                <img 
+                  src={luxuryMakeup} 
+                  alt="Luxury Airbrush Makeup" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div className="p-10">
+                <h3 className="text-3xl font-bold text-burgundy mb-4">{BRIDAL_PRICING.luxury.title}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed mb-8 h-18 line-clamp-2">
+                  {BRIDAL_PRICING.luxury.description} Waterproof, 18-hour long-lasting finish.
+                </p>
+                <Link 
+                  to="/services" 
+                  className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[11px] group/link"
+                >
+                  Learn More <ChevronRight size={14} className="transition-transform group-hover/link:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
+
+
 
       {/* Signature Style */}
       <section className="py-20 md:py-32">
@@ -254,19 +329,6 @@ const Index = () => {
               <p className="text-muted-foreground text-lg leading-relaxed mb-10 font-body">
                 Kickstart your career as a professional bridal makeup artist. Our 30-day intensive course covers everything from basic fundamentals to advanced business strategies.
               </p>
-
-              <div className="flex items-center gap-6 mb-12">
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-primary">{ACADEMY_DETAILS.duration}</p>
-                  <p className="text-[10px] uppercase font-bold tracking-widest opacity-50">Course Time</p>
-                </div>
-                <div className="w-px h-10 bg-gold/20" />
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-primary">{ACADEMY_DETAILS.fees}</p>
-                  <p className="text-[10px] uppercase font-bold tracking-widest opacity-50">Enrollment Fee</p>
-                </div>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-5">
                 <Link to="/courses" className="px-10 py-4 gradient-gold text-foreground font-bold tracking-widest uppercase text-xs rounded-xl shadow-lg hover:shadow-2xl transition-all text-center">
                   View Course Details
@@ -285,38 +347,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Highlight */}
-      <section className="py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeading title="Recent Bridal Work" subtitle="A curation of our latest bridal transformations and traditional designs." />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {loadingGallery ? (
-              Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="aspect-[3/4] rounded-2xl" />)
-            ) : (
-              galleryImages.map((img, i) => (
-                <motion.div
-                  key={img.id || i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="rounded-2xl overflow-hidden aspect-[3/4] relative group shadow-lg"
-                >
-                  <img src={img.src} alt={img.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-burgundy/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <p className="text-white font-bold">{img.label}</p>
-                  </div>
-                </motion.div>
-              ))
-            )}
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/portfolio" className="px-8 py-3 rounded-full border border-gold text-gold font-bold uppercase tracking-widest text-[10px] hover:bg-gold hover:text-white transition-all">
-              Explore Full Portfolio
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-20 md:py-32 bg-blush-pink/30 border-y border-gold/10">

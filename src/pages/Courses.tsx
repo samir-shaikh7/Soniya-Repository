@@ -12,7 +12,7 @@ const Courses = () => {
     <Layout>
       <SEO
         title="Professional Makeup Academy | 30-Day Intensive Course"
-        description="Join Soniya Patange's Makeup Academy in Sangli. 30-day professional bridal makeup course starting May 2026. Learn hairstyles, saree draping, and marketing."
+        description="Join Soniya Patange's Makeup Academy in Sangli. 30-day professional bridal makeup course. Learn hairstyles, saree draping, and marketing."
       />
 
       {/* Hero Section */}
@@ -65,10 +65,9 @@ const Courses = () => {
       </section>
 
       {/* Course Stats / Details Bar */}
-      <section className="py-10 bg-white border-y border-border shadow-md relative z-20 -mt-10 max-w-5xl mx-auto rounded-xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-8">
+      <section className="py-10 bg-white border-y border-border shadow-md relative z-20 -mt-10 max-w-4xl mx-auto rounded-xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-12">
           {[
-            { icon: Calendar, label: "Starting Date", value: ACADEMY_DETAILS.startDate },
             { icon: Clock, label: "Duration", value: ACADEMY_DETAILS.duration },
             { icon: Clock, label: "Time", value: ACADEMY_DETAILS.timing },
             { icon: MapPin, label: "Location", value: ACADEMY_DETAILS.location },
@@ -141,9 +140,6 @@ const Courses = () => {
                 </div>
 
                 <div className="space-y-4 mb-10 pt-6 border-t border-border">
-                  <p className="flex items-center gap-3 text-sm font-body">
-                    <Calendar size={18} className="text-gold" /> <span>Next Batch: {ACADEMY_DETAILS.startDate}</span>
-                  </p>
                   <p className="flex items-center gap-3 text-sm font-body">
                     <Target size={18} className="text-gold" /> <span>Practical Focus: 100% Guaranteed</span>
                   </p>

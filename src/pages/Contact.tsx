@@ -289,20 +289,45 @@ Please share availability and details.`.trim();
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-burgundy italic">Our Studio Location – Sangli 📍</h2>
+      <section className="py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <p className="font-subheading text-lg text-gold tracking-widest uppercase mb-4">Visit Our Studio</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-burgundy italic">Find Us in Sangli 📍</h2>
+          </motion.div>
         </div>
-        <div className="h-[450px] w-full border-t border-gold/10 grayscale hover:grayscale-0 transition-all duration-700">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.599684343118!2d74.56416177533812!3d16.841124298260173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1190041aaf957%3A0x976cb9acf3a1d82a!2sAkashwani%20(A.I.R)!5e0!3m2!1sen!2sin!4v1715694242699!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="h-[450px] md:h-[550px] w-full lg:w-[80%] mx-auto rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white relative group"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1573.70!2d74.559083!3d16.843472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDUwJzM2LjUiTiA3NMKwMzMnMzIuNyJF!5e1!3m2!1sen!2sin!4v1776519027636!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="transition-all duration-200"
+            ></iframe>
+
+            <div className="absolute inset-0 pointer-events-none border border-gold/10 rounded-[2.5rem]" />
+          </motion.div>
+
+          <div className="mt-10 text-center">
+            <a
+              href="https://maps.app.goo.gl/3bc1190041aaf957"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-burgundy font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all border border-gold/10 text-xs uppercase tracking-widest"
+            >
+              Open in Google Maps <Send size={14} className="text-gold" />
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
