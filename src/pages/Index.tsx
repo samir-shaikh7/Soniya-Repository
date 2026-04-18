@@ -62,7 +62,7 @@ const Index = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-cream/50 overflow-hidden">
+      <section className="relative min-h-[75vh] md:min-h-screen flex items-center bg-cream/50 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.img
             src={heroBride}
