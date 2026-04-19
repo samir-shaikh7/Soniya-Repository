@@ -1,8 +1,8 @@
 export default async function handler(req, res) {
     try {
-        const response = await fetch(`${process.env.SUPABASE_URL}/rest/v1/`, {
+        const response = await fetch(`${process.env.VITE_SUPABASE_URL}/rest/v1/`, {
             headers: {
-                apikey: process.env.SUPABASE_KEY,
+                apikey: process.env.VITE_SUPABASE_ANON_KEY,
             },
         });
 
