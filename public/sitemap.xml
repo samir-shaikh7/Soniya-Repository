@@ -1,3 +1,50 @@
-https://soniyapatangemakeups.in/
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Home Page -->
+  <url>
+    <loc>https://soniyapatangemakeups.in/</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-https://www.soniyapatangemakeups.in/
+  <!-- Services Page -->
+  <url>
+    <loc>https://soniyapatangemakeups.in/services</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bridal Pricing Page -->
+  <url>
+    <loc>https://soniyapatangemakeups.in/bridal-pricing</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://soniyapatangemakeups.in/portfolio</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Courses Page -->
+  <url>
+    <loc>https://soniyapatangemakeups.in/courses</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://soniyapatangemakeups.in/contact</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
