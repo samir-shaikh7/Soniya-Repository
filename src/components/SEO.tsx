@@ -42,7 +42,7 @@ const SEO = ({
     setMetaTag("property", "og:title", ogTitle || fullTitle);
     setMetaTag("property", "og:description", ogDescription || description);
     setMetaTag("property", "og:type", ogType);
-    setMetaTag("property", "og:url", "https://www.soniyapatangemakeups.in/");
+    setMetaTag("property", "og:url", "https://soniyapatangemakeups.in/");
 
     // ✅ Twitter
     setMetaTag("name", "twitter:card", "summary_large_image");
@@ -56,7 +56,7 @@ const SEO = ({
       link.setAttribute("rel", "canonical");
       document.head.appendChild(link);
     }
-    link.setAttribute("href", "https://www.soniyapatangemakeups.in/");
+    link.setAttribute("href", "https://soniyapatangemakeups.in/");
 
     // ✅ Schema (IMPORTANT for Google ranking)
     let script = document.querySelector("#schema-json");
@@ -71,7 +71,7 @@ const SEO = ({
       "@context": "https://schema.org",
       "@type": "BeautySalon",
       "name": "Soniya Patange Makeup Artist",
-      "url": "https://www.soniyapatangemakeups.in/",
+      "url": "https://soniyapatangemakeups.in/",
       "telephone": "+918624051090",
       "address": {
         "@type": "PostalAddress",
