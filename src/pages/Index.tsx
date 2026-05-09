@@ -14,14 +14,12 @@ import { TESTIMONIALS_DATA } from "@/data/testimonialsData";
 import heroBride from "@/assets/hero-bride.jpg";
 import southIndian1 from "@/assets/Owner.webp";
 import heroBride2 from "@/assets/15.jpg";
-import engagement1 from "@/assets/bride-engagement-1.jpg";
-import party1 from "@/assets/bride-party-1.jpg";
 import hdMakeup from "@/assets/8.webp";
 import luxuryMakeup from "@/assets/12.webp";
 
 const Index = () => {
   // Use static data directly
-  const galleryImages = PORTFOLIO_DATA.slice(0, 6).map(d => ({ src: d.src, label: d.label, id: d.id }));
+  const galleryImages = PORTFOLIO_DATA.slice(0, 12).map(d => ({ src: d.src, label: d.label, id: d.id }));
   const loadingGallery = false;
   const testimonials = TESTIMONIALS_DATA.slice(0, 3);
   const loadingTestimonials = false;
@@ -106,7 +104,7 @@ const Index = () => {
           <SectionHeading title="Recent Bridal Work" subtitle="A curation of our latest bridal transformations and traditional designs." />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {loadingGallery ? (
-              Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="aspect-[3/4] rounded-2xl" />)
+              Array.from({ length: 12 }).map((_, i) => <Skeleton key={i} className="aspect-[3/4] rounded-2xl" />)
             ) : (
               galleryImages.map((img, i) => (
                 <motion.div
